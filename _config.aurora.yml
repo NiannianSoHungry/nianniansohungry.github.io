@@ -9,15 +9,15 @@
 #！ @docs https://aurora.tridiamond.tech/guide/configuration.html
 #! ---------------------------------------------------------------
 site:
-  subtitle: 生物探险家
-  author: 明明钟
+  subtitle: '生物探险家'
+  author: '明明钟'
   nick: bio-navigator.top
-  description:
+  description: '生物领域的探险家<br>分享自己踩过的坑与总结的经验<br>与各位同仁共勉'
   link: '/'
-  language: cn
+  language: zh-CN
   multi_language: true
-  logo:
-  avatar:
+  logo: '/img/avatar.jpg'
+  avatar: '/img/avatar.jpg'
   beian:
     number: ''
     link: ''
@@ -63,8 +63,8 @@ menu:
 #! ---------------------------------------------------------------
 theme:
   dark_mode: false
-  profile_shape: diamond # support `circle`, `diamond`, `rounded`
-  feature: true
+  profile_shape: circle # support `circle`, `diamond`, `rounded`
+  feature: false
   # gradient:
   #   color_1: '#24c6dc'
   #   color_2: '#5433ff'
@@ -139,7 +139,7 @@ valine:
   placeholder: Leave your thoughts behind~
   visitor: true
   lang: en
-  avatarForce: false
+  avatarForce: true
   meta: ['nick', 'mail']
   requiredFields: ['nick', 'mail']
   admin: '' # admin username
@@ -222,4 +222,6 @@ footer_links:
 #! ---------------------------------------------------------------
 shiki:
   enable: true
-  backgroundColor: "#1a1a1a"
+  theme: github-light
+  externalTheme:
+  backgroundColor: '#fcfcfc'
