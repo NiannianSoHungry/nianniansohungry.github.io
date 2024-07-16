@@ -3,10 +3,11 @@ title: RNAseq 数据预处理的常规流程
 date: 2024-07-12 14:54:56
 tags: 
     - 生物信息学
-    - bulk seq
+    - bulk-seq
+    - 数据预处理
 categories:
     - 生物信息学
-cover: /img/RNAseq_数据预处理的常规流程/picPcaAfter.jpeg
+cover: /img/RNAseq-数据预处理的常规流程/picPcaAfter.jpeg
 mathjax: true
 ---
 
@@ -42,7 +43,7 @@ library(edgeR) # 去除低表达基因
 
 此次演示中使用来自 GSE222699 的 RNAseq 数据，数据从 GEO 官网下载。
 
-```tree
+```
 GSE222699_RAW
 ├─ GSM6929162_HDMB03_CTRL_1.txt.gz
 ├─ GSM6929163_HDMB03_CTRL_2.txt.gz
@@ -249,7 +250,7 @@ picPcaBefore <- fviz_pca_ind(
 print(picPcaBefore)
 ```
 
-<img src="/img/RNAseq_数据预处理的常规流程/picPcaBefore.jpeg">
+<img src="/img/RNAseq-数据预处理的常规流程/picPcaBefore.jpeg">
 
 ### 2.2 相关性热图
 计算各个样本之间的相关性，以热图的形式展示，理想情况下：
@@ -271,7 +272,7 @@ plot.new() # 新建画布
 print(picHeatmapBefore) # 画图
 ```
 
-<img src="/img/RNAseq_数据预处理的常规流程/picHeatmapBefore.jpeg">
+<img src="/img/RNAseq-数据预处理的常规流程/picHeatmapBefore.jpeg">
 
 ### 2.3 箱线图
 通过箱线图表示各个样本的分布，以考察各个样本是否属于同分布；
@@ -299,7 +300,7 @@ plot.new() # 新建画布
 print(picBoxplotBefore) # 画图
 ```
 
-<img src="/img/RNAseq_数据预处理的常规流程/picBoxplotBefore.jpeg">
+<img src="/img/RNAseq-数据预处理的常规流程/picBoxplotBefore.jpeg">
 
 ## <div id='3'>3. 过滤低表达基因</div>
 
@@ -341,7 +342,7 @@ picBoxplotRLE <- (countsRLE+1) %>% log2() %>% # log2(counts+1)
 print(picBoxplotRLE)
 ```
 
-<img src="/img/RNAseq_数据预处理的常规流程/picBoxplotRLE.jpeg">
+<img src="/img/RNAseq-数据预处理的常规流程/picBoxplotRLE.jpeg">
 
 经过过滤低表达基因后，可以看到，箱线图中的中位数线位于箱子的正中间，说明现在的表达量分布接近正态分布。
 
@@ -370,7 +371,7 @@ picBoxplotAfter <- (countsNorm+1) %>% log2() %>%
 print(picBoxplotAfter)
 ```
 
-<img src="/img/RNAseq_数据预处理的常规流程/picBoxplotAfter.jpeg">
+<img src="/img/RNAseq-数据预处理的常规流程/picBoxplotAfter.jpeg">
 
 可以看到，经过标准化后的数据分布完全一致，有利于我们下一步的分析
 
@@ -410,8 +411,8 @@ countsRBE <- removeBatchEffect(
 
 代码不赘述
 
-<img src="/img/RNAseq_数据预处理的常规流程/picPcaAfter.jpeg">
+<img src="/img/RNAseq-数据预处理的常规流程/picPcaAfter.jpeg">
 
-<img src="/img/RNAseq_数据预处理的常规流程/picHeatmapAfter.jpeg">
+<img src="/img/RNAseq-数据预处理的常规流程/picHeatmapAfter.jpeg">
 
-<img src="/img/RNAseq_数据预处理的常规流程/picBoxplotAfter.jpeg">
+<img src="/img/RNAseq-数据预处理的常规流程/picBoxplotAfter.jpeg">

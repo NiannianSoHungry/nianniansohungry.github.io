@@ -54,6 +54,7 @@ shiki:
   enable: true
   backgroundColor: '#fcfcfc'
 mathjax:
+  enable: false
   tags: none # or 'ams' or 'all'
   single_dollars: true # enable single dollar signs as in-line math delimiters
   cjk_width: 0.9 # relative CJK char width
