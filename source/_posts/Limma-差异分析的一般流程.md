@@ -86,7 +86,7 @@ $$
 这相当于将某个基因的表达量转化为其在所有基因中的百分位数，实现将长拖尾数据转化为正态分布。
 
 ```R
-countsNormVoom <- v0oom(
+countsNormVoom <- voom(
   counts = countsNorm,
   design = design
 )
