@@ -23,7 +23,7 @@ menu:
 # nav相关配置
 nav:
   enable: false
-  travelling: true
+  travelling: false
   clock: true
   menu:
     - title: 个人页面
@@ -101,7 +101,7 @@ docsearch:
 
 # Local search
 local_search:
-  enable: false
+  enable: true
   preload: false
   CDN:
 
